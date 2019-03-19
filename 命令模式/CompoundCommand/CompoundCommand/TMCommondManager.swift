@@ -20,22 +20,22 @@ class TMCommondManager {
     
     func toLeft() {
         self.tm.toLeft()
-        self.addCommands(method: "toLeft")
+        self.addCommands(method: TetrisMachine.toLeft)
     }
     
     func toRight() {
         self.tm.toRight()
-        self.addCommands(method: "toRight")
+        self.addCommands(method: TetrisMachine.toRight)
     }
     
     func toTransform() {
         self.tm.toTransform()
-        self.addCommands(method: "toTransform")
+        self.addCommands(method: TetrisMachine.toTransform)
     }
     
-    func addCommands(method: String) {
+    func addCommands(method: @escaping (TetrisMachine) -> () -> Void) {
         let command = DynamicCommand(tm: self.tm) { (tm) -> (Void) in
-            tm.perform(Selector(method))
+            method(tm)()
         }
         self.commandArray.append(command)
     }

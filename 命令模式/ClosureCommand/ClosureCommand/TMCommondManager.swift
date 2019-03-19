@@ -22,22 +22,22 @@ class TMCommondManager {
     
     func toLeft() {
         self.tm.toLeft()
-        self.addCommand(methodName: "toLeft")
+        self.addCommand(method: TetrisMachine.toLeft)
     }
     
     func toRight() {
         self.tm.toRight()
-        self.addCommand(methodName: "toRight")
+        self.addCommand(method: TetrisMachine.toRight)
     }
     
     func toTransform() {
         self.tm.toTransform()
-        self.addCommand(methodName: "toTransform")
+        self.addCommand(method: TetrisMachine.toTransform)
     }
     
-    func addCommand(methodName: String) {
+    func addCommand(method: @escaping (TetrisMachine) -> () -> Void) {
         self.commandArray.append() {
-            $0.perform(Selector(methodName))
+            method($0)()
         }
     }
     

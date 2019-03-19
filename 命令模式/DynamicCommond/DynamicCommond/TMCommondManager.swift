@@ -20,24 +20,25 @@ class TMCommondManager {
     
     func toLeft() {
         self.tm.toLeft()
-        self.addCommond(methodName: "toLeft")
+        self.addCommand(method: TetrisMachine.toLeft)
     }
     
     func toRight() {
         self.tm.toRight()
-        self.addCommond(methodName: "toRight")
+        self.addCommand(method: TetrisMachine.toRight)
     }
     
     func toTransform() {
         self.tm.toTransform()
-        self.addCommond(methodName: "toTransform")
+        self.addCommand(method: TetrisMachine.toTransform)
     }
     
     //添加动态命令到数组中,保存动态命令
-    func addCommond(methodName: String) {
-        let command = TMDynamicCommond(tm: self.tm, block: { (tm: TetrisMachine) -> (Void) in
-            tm.perform(Selector(methodName))
-        })
+    
+    func addCommand(method: @escaping (TetrisMachine) -> (() -> Void)) {
+        let command = TMDynamicCommond(tm: self.tm) { (tm) -> (Void) in
+            method(tm)()
+        }
         self.commandsArray.append(command)
     }
     

@@ -19,24 +19,24 @@ class CommandManager {
     
     func toLeft() {
         self.tm.toLeft()
-        self.addCommand(method: "toLeft")
+        self.addCommand(method: TetrisMachine.toLeft)
     }
     
     func toRight() {
         self.tm.toRight()
-        self.addCommand(method: "toRight")
+        self.addCommand(method: TetrisMachine.toRight)
     }
     
     func toTransform() {
         self.tm.toTransform()
-        self.addCommand(method: "toTransform")
+        self.addCommand(method: TetrisMachine.toTransform)
     }
     
-    func addCommand(method: String) {
+    func addCommand(method: @escaping (TetrisMachine) -> () -> Void) {
         
         //在这里创建command的时候,设置了泛型的类型是TetrisMachine
         let command = GenericCommand<TetrisMachine>(tm: self.tm) { (tm) -> (Void) in
-            tm.perform(Selector(method))
+            method(tm)()
         }
         self.commandArray.append(command)
     }
