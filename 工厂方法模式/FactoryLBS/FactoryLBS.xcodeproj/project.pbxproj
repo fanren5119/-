@@ -23,7 +23,6 @@
 		9BD94C2E22471C5600E3090E /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD94C2722471C5600E3090E /* BaiduMapAPI_Utils.framework */; };
 		9BD94C3022471C5600E3090E /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD94C2922471C5600E3090E /* BaiduMapAPI_Base.framework */; };
 		9BD94C3122471C5600E3090E /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD94C2A22471C5600E3090E /* BaiduMapAPI_Search.framework */; };
-		9BD94C3322471C5600E3090E /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD94C2C22471C5600E3090E /* BaiduMapAPI_Cloud.framework */; };
 		9BD94C3722471C6600E3090E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD94C3522471C6600E3090E /* libcrypto.a */; };
 		9BD94C3822471C6600E3090E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD94C3622471C6600E3090E /* libssl.a */; };
 		9BD94C3B22471CB600E3090E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD94C3A22471CB600E3090E /* CoreGraphics.framework */; };
@@ -82,7 +81,6 @@
 		9BD94C2722471C5600E3090E /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		9BD94C2922471C5600E3090E /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		9BD94C2A22471C5600E3090E /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
-		9BD94C2C22471C5600E3090E /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		9BD94C3522471C6600E3090E /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		9BD94C3622471C6600E3090E /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		9BD94C3A22471CB600E3090E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,7 +149,6 @@
 				9BD94C3D22471CBF00E3090E /* CoreLocation.framework in Frameworks */,
 				9BD94C3B22471CB600E3090E /* CoreGraphics.framework in Frameworks */,
 				9BD94C2E22471C5600E3090E /* BaiduMapAPI_Utils.framework in Frameworks */,
-				9BD94C3322471C5600E3090E /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				9BD94C3822471C6600E3090E /* libssl.a in Frameworks */,
 				9BD94C3722471C6600E3090E /* libcrypto.a in Frameworks */,
 				9BD94C3122471C5600E3090E /* BaiduMapAPI_Search.framework in Frameworks */,
@@ -210,7 +207,6 @@
 				9BD94C2722471C5600E3090E /* BaiduMapAPI_Utils.framework */,
 				9BD94C2922471C5600E3090E /* BaiduMapAPI_Base.framework */,
 				9BD94C2A22471C5600E3090E /* BaiduMapAPI_Search.framework */,
-				9BD94C2C22471C5600E3090E /* BaiduMapAPI_Cloud.framework */,
 			);
 			path = BaiduMap_Frameworks;
 			sourceTree = "<group>";
