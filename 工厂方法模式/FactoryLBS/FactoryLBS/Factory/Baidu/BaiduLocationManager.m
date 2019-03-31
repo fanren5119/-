@@ -102,8 +102,9 @@
 - (BOOL)requestLocationWithReGeocode:(BOOL)withReGeocode completionBlock:(LocatingCompletionBlock)completionBlock
 {
     return [_location requestLocationWithReGeocode:withReGeocode withNetworkState:YES completionBlock:^(BMKLocation * _Nullable location, BMKLocationNetworkState state, NSError * _Nullable error) {
+        BaiduLocationReGeocode *geocode = [[BaiduLocationReGeocode alloc] initWithReGeocode:location.rgcData];
         if (completionBlock) {
-//            completionBlock(location.location, nil, error);
+            completionBlock(location.location, geocode, error);
         }
     }];
 }

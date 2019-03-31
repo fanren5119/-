@@ -104,8 +104,9 @@
 - (BOOL)requestLocationWithReGeocode:(BOOL)withReGeocode completionBlock:(LocatingCompletionBlock)completionBlock
 {
     return [_location requestLocationWithReGeocode:withReGeocode completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
+        GaodeLocationReGeocode *geocode = [[GaodeLocationReGeocode alloc] initWithReGeocode:regeocode];
         if (completionBlock) {
-//            completionBlock
+            completionBlock(location, geocode, error);
         }
     }];
 }

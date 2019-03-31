@@ -12,17 +12,19 @@
 #import "GaodeMapFactory.h"
 #import "LocationProtocol.h"
 #import "MapEngine.h"
+#import "MapPointAnnotation.h"
 
 #import <BMKLocationkit/BMKLocationComponent.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 
 #import <AMapLocationKit/AMapLocationKit.h>
 
-@interface ViewController () <LocationProtocolDelegate>
+@interface ViewController () <LocationProtocolDelegate, MapViewDelegate>
 
 //@property (nonatomic, strong) BMKLocationManager *locationManager;
 //@property (nonatomic, strong) AMapLocationManager *locationManager;
 @property (nonatomic, strong) id<LocationProtocol> location;
+@property (nonatomic, strong) id<MapViewProtocol> mapView;
 
 @end
 
@@ -34,23 +36,37 @@
     
     
     id<MapFactoryProtocol> factory = [[MapEngine shared] getFactory];
-    id<MapViewProtocol> mapView = [factory createMapView:self.view.bounds];
-    [self.view addSubview:mapView.mapView];
+    _mapView = [factory createMapView:self.view.bounds];
+    [self.view addSubview:_mapView.mapView];
+    _mapView.delegate = self;
+    _mapView.showsUserLocation = YES;
+    _mapView.userTrackingMode = UserTrackingModeFollowWithHeading;
     
-    _location = [factory getLocationManager];
-    _location.delegate = self;
-    [_location startUpdatingLocation];
+    [_mapView startLocation];
+//    _location = [factory getLocationManager];
+//    _location.delegate = self;
+//    [_location startUpdatingLocation];
+//    [_location requestLocationWithReGeocode:YES completionBlock:^(CLLocation * _Nonnull location, id<LocationReGeocode>  _Nonnull regeocode, NSError * _Nonnull error) {
+////        NSLog(@"location = %f : %f", location.coordinate.latitude, location.coordinate.longitude);
+//
+//        MapPointAnnotation *annoation = [[MapPointAnnotation alloc] init];
+//        [annoation setCoordinate:location.coordinate];
+//        annoation.title = regeocode.district;
+//        annoation.subtitle = regeocode.formattedAddress;
+//        [mapView addAnnotation:annoation];
+//
+//        [mapView setCenterLocation:location animated:NO];
+//    }];
 }
 
-- (void)locationManager:(id<LocationProtocol>)manager didFailWithError:(NSError *)error
+- (void)locationDidUpdateLocation:(CLLocation *)location reGeocode:(id<LocationReGeocode>)reGeocode
 {
-    NSLog(@"error = %@", error);
+    [_mapView setCenterLocation:location animated:NO];
 }
 
-- (void)locationManager:(id<LocationProtocol>)manager didUpdateLocation:(CLLocation *)location reGeocode:(id<LocationReGeocode>)reGeocode
+- (void)locationDidUpdateHeading:(CLHeading *)newHeading
 {
     
 }
-
 
 @end

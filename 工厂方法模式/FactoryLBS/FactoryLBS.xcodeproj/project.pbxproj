@@ -13,6 +13,7 @@
 		9B0840B0224792E5006A0AD1 /* BaiduLocationReGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0840AF224792E5006A0AD1 /* BaiduLocationReGeocode.m */; };
 		9B0840B32247A0C2006A0AD1 /* GaodeLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0840B22247A0C2006A0AD1 /* GaodeLocationManager.m */; };
 		9B0840B62247A264006A0AD1 /* GaodeLocationReGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0840B52247A264006A0AD1 /* GaodeLocationReGeocode.m */; };
+		9BADD3452250B13800528ABF /* MapPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BADD3442250B13800528ABF /* MapPointAnnotation.m */; };
 		9BD94C1122471BE800E3090E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94C1022471BE800E3090E /* AppDelegate.mm */; };
 		9BD94C1422471BE800E3090E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD94C1322471BE800E3090E /* ViewController.m */; };
 		9BD94C1722471BE800E3090E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD94C1522471BE800E3090E /* Main.storyboard */; };
@@ -67,6 +68,10 @@
 		9B0840B22247A0C2006A0AD1 /* GaodeLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaodeLocationManager.m; sourceTree = "<group>"; };
 		9B0840B42247A264006A0AD1 /* GaodeLocationReGeocode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaodeLocationReGeocode.h; sourceTree = "<group>"; };
 		9B0840B52247A264006A0AD1 /* GaodeLocationReGeocode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaodeLocationReGeocode.m; sourceTree = "<group>"; };
+		9BADD3422250AF5700528ABF /* MAPAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAPAnnotation.h; sourceTree = "<group>"; };
+		9BADD3432250B13800528ABF /* MapPointAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPointAnnotation.h; sourceTree = "<group>"; };
+		9BADD3442250B13800528ABF /* MapPointAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPointAnnotation.m; sourceTree = "<group>"; };
+		9BADD3462250C37500528ABF /* MapViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewDelegate.h; sourceTree = "<group>"; };
 		9BD94C0C22471BE800E3090E /* FactoryLBS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactoryLBS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD94C0F22471BE800E3090E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BD94C1022471BE800E3090E /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -245,9 +250,13 @@
 			isa = PBXGroup;
 			children = (
 				9BD94C5E2247253000E3090E /* MapViewProtocol.h */,
+				9BADD3462250C37500528ABF /* MapViewDelegate.h */,
 				9BD94C682247258F00E3090E /* MapFactoryProtocol.h */,
+				9BADD3422250AF5700528ABF /* MAPAnnotation.h */,
 				9BD94C7E2247507D00E3090E /* LocationProtocol.h */,
 				9B0840A722478832006A0AD1 /* LocationReGeocode.h */,
+				9BADD3432250B13800528ABF /* MapPointAnnotation.h */,
+				9BADD3442250B13800528ABF /* MapPointAnnotation.m */,
 				9BD94C7222472CB800E3090E /* MapEngine.h */,
 				9BD94C7322472CB800E3090E /* MapEngine.m */,
 				9BD94C7522472CEC00E3090E /* MapView.plist */,
@@ -384,6 +393,7 @@
 			files = (
 				9BD94C812247509700E3090E /* BaiduLocation.m in Sources */,
 				9BD94C1422471BE800E3090E /* ViewController.m in Sources */,
+				9BADD3452250B13800528ABF /* MapPointAnnotation.m in Sources */,
 				9BD94C7922473E4B00E3090E /* MapPlatform.m in Sources */,
 				9B0840B62247A264006A0AD1 /* GaodeLocationReGeocode.m in Sources */,
 				9BD94C1F22471BEB00E3090E /* main.m in Sources */,
@@ -538,8 +548,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99RE42SNTY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FactoryLBS/BaiduMap_Frameworks",
@@ -567,8 +578,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99RE42SNTY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FactoryLBS/BaiduMap_Frameworks",

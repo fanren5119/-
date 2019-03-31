@@ -10,7 +10,7 @@
 		<key>key</key>
 		<string>c1d500d0ea979f864357da03a09284eb</string>
 		<key>isOpen</key>
-		<true/>
+		<false/>
 	</dict>
 	<dict>
 		<key>factoryName</key>
@@ -20,7 +20,7 @@
 		<key>key</key>
 		<string>TIFQmp3HcFBAx9iiYx7kuN9fSqy0sKEq</string>
 		<key>isOpen</key>
-		<false/>
+		<true/>
 	</dict>
 </array>
 </plist>
