@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// 角色一: 模板类
 class TemplatePlayer: NSObject {
     
     final func play(url: URL, context: UIViewController, rect: CGRect) {

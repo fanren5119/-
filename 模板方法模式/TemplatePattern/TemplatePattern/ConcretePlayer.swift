@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
+// 角色二:具体实现类
 class ConcretePlayer: TemplatePlayer {
     
     var player : AVPlayer?
